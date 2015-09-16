@@ -1,5 +1,6 @@
  //declare bacteria variables here
- 	Bacteria [] colony = new Bacteria[3];
+int NUM_BACTERIA = 100;
+Bacteria [] colony = new Bacteria[NUM_BACTERIA];
 
  void setup()   
  {     
@@ -22,9 +23,14 @@
  	}   
 }
 
- class Bacteria    
- {     
- 	int xPos, yPos, randFill;
+void mouseClicked()
+{
+	// NUM_BACTERIA = NUM_BACTERIA*2;
+}
+
+class Bacteria    
+{     
+	int xPos, yPos, randFill;
  	//lots of java!
  	Bacteria(int x, int y)
  	{
@@ -49,4 +55,4 @@
  		// fill(255);
  		ellipse(xPos, yPos, 5, 5);
  	}
- }    
+}    

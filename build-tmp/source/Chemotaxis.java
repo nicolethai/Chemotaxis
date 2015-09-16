@@ -15,7 +15,8 @@ import java.io.IOException;
 public class Chemotaxis extends PApplet {
 
  //declare bacteria variables here
- 	Bacteria [] colony = new Bacteria[3];
+int NUM_BACTERIA = 100;
+Bacteria [] colony = new Bacteria[NUM_BACTERIA];
 
  public void setup()   
  {     
@@ -38,9 +39,14 @@ public class Chemotaxis extends PApplet {
  	}   
 }
 
- class Bacteria    
- {     
- 	int xPos, yPos, randFill;
+public void mouseClicked()
+{
+	// NUM_BACTERIA = NUM_BACTERIA*2;
+}
+
+class Bacteria    
+{     
+	int xPos, yPos, randFill;
  	//lots of java!
  	Bacteria(int x, int y)
  	{
@@ -65,7 +71,7 @@ public class Chemotaxis extends PApplet {
  		// fill(255);
  		ellipse(xPos, yPos, 5, 5);
  	}
- }    
+}    
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Chemotaxis" };
     if (passedArgs != null) {
