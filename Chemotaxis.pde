@@ -38,8 +38,15 @@
  	}   
  	void show()
  	{
+ 		randFill = (int)(Math.random()*3);
+ 		if (randFill == 0)
+ 			fill(27,247, 201);
+ 		else if (randFill == 1)
+ 			fill(252, 0, 152);
+ 		else 
+ 			fill(255, 102, 0);
  		noStroke();
- 		fill(255);
+ 		// fill(255);
  		ellipse(xPos, yPos, 5, 5);
  	}
  }    
