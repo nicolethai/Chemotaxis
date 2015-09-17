@@ -25,7 +25,7 @@ Bacteria [] colony = new Bacteria[NUM_BACTERIA];
  	//initialize bacteria variables here
  	for (int i = 0; i < colony.length; i++)
  	{
- 		colony[i] = new Bacteria(250, 250); //(int)(Math.random()*500), (int)(Math.random()*500)
+ 		colony[i] = new Bacteria((int)(Math.random()*500), (int)(Math.random()*500)); // 250, 250
  	} 
  }
 
@@ -37,7 +37,21 @@ Bacteria [] colony = new Bacteria[NUM_BACTERIA];
  	{
  		colony[i].move();
  		colony[i].show();
- 	}   
+ 	}
+ 	fill(255);
+ 	noStroke();
+ 	ellipse(mouseX, mouseY, 10, 10);   
+}
+
+public void mouseMoved()
+{
+	for (int i = 0; i < colony.length; i++)
+	{
+		if (colony[i].xPos < mouseX)
+			colony[i].xPos += mouseX - xPos;
+		else 
+			colony[i].xPos -= mouseX - xPos;
+	}
 }
 
 class Bacteria    
