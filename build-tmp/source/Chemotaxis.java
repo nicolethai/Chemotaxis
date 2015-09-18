@@ -18,14 +18,18 @@ public class Chemotaxis extends PApplet {
 int NUM_BACTERIA = 100;
 Bacteria [] colony = new Bacteria[NUM_BACTERIA];
 
+int a, b;
+
  public void setup()   
  {     
+ 	background(1);
+
  	size(500, 500);
  	frameRate(100);
  	//initialize bacteria variables here
  	for (int i = 0; i < colony.length; i++)
  	{
- 		colony[i] = new Bacteria((int)(Math.random()*500), (int)(Math.random()*500)); // 250, 250
+ 		colony[i] = new Bacteria(a, b); // 250, 250 // (int)(Math.random()*500), (int)(Math.random()*500)
  	} 
  }
 
@@ -38,20 +42,17 @@ Bacteria [] colony = new Bacteria[NUM_BACTERIA];
  		colony[i].move();
  		colony[i].show();
  	}
- 	fill(255);
- 	noStroke();
- 	ellipse(mouseX, mouseY, 10, 10);   
+ 	// fill(255);
+ 	// noStroke();
+ 	// ellipse(mouseX, mouseY, 10, 10);   
 }
 
-public void mouseMoved()
+public void mouseClicked()
 {
-	for (int i = 0; i < colony.length; i++)
-	{
-		if (colony[i].xPos < mouseX)
-			colony[i].xPos += mouseX - xPos;
-		else 
-			colony[i].xPos -= mouseX - xPos;
-	}
+	a = mouseX;
+	b = mouseY;
+	setup();
+	redraw();
 }
 
 class Bacteria    
@@ -98,7 +99,16 @@ class Bacteria
 	 		rect(xPos, yPos, 5, 5);
 		}
  	}
+
 }    
+
+
+
+// if ((xPos == mouseX - 5 && yPos == mouseY - 5) ||
+// 	(xPos == mouseX + 5 && yPos == mouseY + 5) ||
+// 	(xPos == mouseX - 5 && yPos == mouseY + 5) ||
+// 	(xPos == mouseX + 5 && yPos == mouseY - 5))
+
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Chemotaxis" };
     if (passedArgs != null) {
