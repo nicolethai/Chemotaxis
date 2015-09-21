@@ -52,7 +52,7 @@ public void mouseClicked()
 	a = mouseX;
 	b = mouseY;
 	setup();
-	redraw();
+	// redraw();
 }
 
 class Bacteria    
@@ -66,8 +66,16 @@ class Bacteria
  	}
  	public void move()
  	{
- 		xPos += (int)(Math.random()*3)-1;
- 		yPos += (int)(Math.random()*3)-1;
+ 		if (xPos < mouseX)
+ 			xPos += (int)(Math.random()*3)-2;
+ 		else 
+ 			xPos += (int)(Math.random()*3)-1;
+ 		if (yPos < mouseY)
+ 			yPos += (int)(Math.random()*3)-2;
+ 		else 
+ 			yPos += (int)(Math.random()*3)-1;
+ 		// xPos += (int)(Math.random()*3)-1;
+ 		// yPos += (int)(Math.random()*3)-1;
  	}   
  	public void show()
  	{
