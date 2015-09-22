@@ -13,7 +13,7 @@ int a, b;
  	//initialize bacteria variables here
  	for (int i = 0; i < colony.length; i++)
  	{
- 		colony[i] = new Bacteria(a, b); // 250, 250 // (int)(Math.random()*500), (int)(Math.random()*500)
+ 		colony[i] = new Bacteria(a, b);
  	} 
  }
 
@@ -26,9 +26,6 @@ int a, b;
  		colony[i].move();
  		colony[i].show();
  	}
- 	// fill(255);
- 	// noStroke();
- 	// ellipse(mouseX, mouseY, 10, 10);   
 }
 
 void mouseClicked()
@@ -36,7 +33,6 @@ void mouseClicked()
 	a = mouseX;
 	b = mouseY;
 	setup();
-	// redraw();
 }
 
 class Bacteria    
@@ -58,8 +54,6 @@ class Bacteria
  			yPos += (int)(Math.random()*3)-2;
  		else 
  			yPos += (int)(Math.random()*3)-1;
- 		// xPos += (int)(Math.random()*3)-1;
- 		// yPos += (int)(Math.random()*3)-1;
  	}   
  	void show()
  	{
@@ -74,7 +68,6 @@ class Bacteria
 	 		else 
 	 			fill(255, 102, 0);
 	 		noStroke();
-	 		// fill(255);
 	 		ellipse(xPos, yPos, 5, 5);
 	 	}
 	 	else
@@ -91,13 +84,4 @@ class Bacteria
 	 		rect(xPos, yPos, 5, 5);
 		}
  	}
-
 }    
-
-
-
-// if ((xPos == mouseX - 5 && yPos == mouseY - 5) ||
-// 	(xPos == mouseX + 5 && yPos == mouseY + 5) ||
-// 	(xPos == mouseX - 5 && yPos == mouseY + 5) ||
-// 	(xPos == mouseX + 5 && yPos == mouseY - 5))
-
