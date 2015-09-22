@@ -9,7 +9,7 @@ int a, b;
  	background(1);
 
  	size(500, 500);
- 	frameRate(100);
+ 	frameRate(500);
  	//initialize bacteria variables here
  	for (int i = 0; i < colony.length; i++)
  	{
