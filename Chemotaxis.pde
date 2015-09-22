@@ -1,5 +1,5 @@
  //declare bacteria variables here
-int NUM_BACTERIA = 100;
+int NUM_BACTERIA = 500;
 Bacteria [] colony = new Bacteria[NUM_BACTERIA];
 
 int a, b;
