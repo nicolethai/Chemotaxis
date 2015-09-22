@@ -1,5 +1,5 @@
  //declare bacteria variables here
-int NUM_BACTERIA = 500;
+int NUM_BACTERIA = 250;
 Bacteria [] colony = new Bacteria[NUM_BACTERIA];
 
 int a, b;
@@ -9,7 +9,7 @@ int a, b;
  	background(1);
 
  	size(500, 500);
- 	frameRate(500);
+ 	frameRate(250);
  	//initialize bacteria variables here
  	for (int i = 0; i < colony.length; i++)
  	{
