@@ -32,7 +32,7 @@ void mouseClicked()
 {
 	a = mouseX;
 	b = mouseY;
-	redraw();
+	setup();
 }
 
 class Bacteria    
